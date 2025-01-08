@@ -26,6 +26,15 @@ struct SongList: View {
             }
             .navigationTitle(Text("Songs"))
         }
+        .onAppear {
+            Task {
+                do {
+                    try await viewModel.fetchSongs()
+                } catch {
+                    print("Error fetching data: \(error)")
+                }
+            }
+        }
     }
 }
 
