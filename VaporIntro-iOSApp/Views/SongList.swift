@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct SongList: View {
+    
+    @StateObject var viewModel = SongListViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                ForEach(viewModel.songs) { song in
+                    Button {
+                        print("selected")
+                    } label : {
+                        Text(song.title)
+                            .font(.title3)
+                            .foregroundStyle(Color(.label))
+                    }
+                }
+            }
+            .navigationTitle(Text("Songs"))
         }
-        .padding()
     }
 }
 
