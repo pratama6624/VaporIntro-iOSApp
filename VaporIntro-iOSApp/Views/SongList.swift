@@ -11,6 +11,8 @@ struct SongList: View {
     
     @StateObject var viewModel = SongListViewModel()
     
+    @State var modal: ModalType? = nil
+    
     var body: some View {
         NavigationView {
             List {
@@ -25,6 +27,23 @@ struct SongList: View {
                 }
             }
             .navigationTitle(Text("Songs"))
+            .toolbar {
+                Button {
+                    print("Add song")
+                } label: {
+                    Label("Add song", systemImage: "plus.circle")
+                }
+            }
+        }
+        .sheet(item: $modal, onDismiss: {
+            // on dismiss
+        }) { modal in
+            switch _modal {
+            case .add:
+                print("add song")
+            case .update:
+                printf("update song")
+            }
         }
         .onAppear {
             Task {

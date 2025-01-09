@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		410CE7B92D2DFFBC00D27A5B /* VaporIntro-iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "VaporIntro-iOSApp.app"; path = "/Users/pratamaone/Git & Github/Swift Framework/Vapor/VaporIntro-iOSApp/build/Debug-iphoneos/VaporIntro-iOSApp.app"; sourceTree = "<absolute>"; };
+		415F067E2D2ED1F3006CA33F /* VaporIntro-iOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VaporIntro-iOSApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,6 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				410CE7BB2D2DFFBC00D27A5B /* VaporIntro-iOSApp */,
+				415F067E2D2ED1F3006CA33F /* VaporIntro-iOSApp.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,7 +59,7 @@
 			packageProductDependencies = (
 			);
 			productName = "VaporIntro-iOSApp";
-			productReference = 410CE7B92D2DFFBC00D27A5B /* VaporIntro-iOSApp.app */;
+			productReference = 415F067E2D2ED1F3006CA33F /* VaporIntro-iOSApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
