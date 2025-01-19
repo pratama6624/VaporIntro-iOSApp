@@ -28,21 +28,23 @@ struct SongList: View {
             }
             .navigationTitle(Text("Songs"))
             .toolbar {
-                Button {
-                    print("Add song")
-                } label: {
-                    Label("Add song", systemImage: "plus.circle")
+                ToolbarItem(placement: .navigation) {
+                    Button {
+                        modal = .add
+                    } label: {
+                        Label("Add Song", systemImage: "plus.circle")
+                    }
                 }
             }
         }
         .sheet(item: $modal, onDismiss: {
             // on dismiss
         }) { modal in
-            switch _modal {
+            switch modal {
             case .add:
-                print("add song")
-            case .update:
-                printf("update song")
+                Text("Add Song")
+            case .update(let song):
+                Text("Update Song: \(song.title)")
             }
         }
         .onAppear {

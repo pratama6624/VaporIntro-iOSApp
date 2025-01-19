@@ -16,5 +16,5 @@ enum ModalType: Identifiable {
     }
     
     case add
-    case update
+    case update(Song)
 }
