@@ -1,0 +1,43 @@
+* Basic Rest API (iOS App)
+
+Note : Struktur folder dibawah berlaku untuk Aplikasi iOS / Aplikasi lainya dengan MVC / MVVM yang akan menerima dan mengirim data ke RestAPI kita.
+
+1. Aliran data :
+    * Database (DBMS).
+    * Services (Mengambil data dari database dan merubahnya ke dalam bentuk Models).
+    * Models (Merepresentasi data dyang didapat dari Services ke seluruh bagian aplikasi).
+    * ViewModels - MVVM (Melakukan filter data sensitif dari Models dan validasi data dari client untuk diberikan kembali ke client).
+    * Controller -MVC (Melakukan filter data sensitif dari Models dan validasi data dari client untuk diberikan kembali ke client).
+    * View (Menampilkan data yang diberikan oleh ViewModels / Controller ke client - UI untuk app dan API Response untuk API).
+    
+    MVVM : Database -> Services -> Models -> ViewModels -> Views
+    MVC : Database -> Services -> Models -> Controller -> Views
+
+2. Struktur Folder
+    * Service :
+        - Mengambil data dari database dan merubah data ke bentuk Models.
+        - Melakukan abtraksi data antara sumber data dengan aplikasi.
+        
+    * Models :
+        - Mempresentasikan model data dari database ke dalam aplikasi
+        - Digunakan untuk membuat representasi object dari suatu data misal song akan memiliki beberapa properti seperti id, title, artist, album, genre dan yang lainya. model akan merubah properti dari suatu object ke dalam tipe data yang bisa diolah dan mempermudah pengelolaan dan pengolahan data bagi programmer dengan bahasa pemrograman tertentu.
+    
+    * Utilities :
+        - Digunakan untuk menyimpan kode yang bersifat umum dan dapat digunakan kembali atau berulang.
+        - Menyimpan kode apapun yang tidak langsung terkait dengan fitur inti aplikasi tetapi mendukung fungsionalitas aplikasi.
+        - Utilities sama dengan folder helper, jadi sama saja.
+        - Helper Function, Error Handling Custom, Logging Tools, Configuration Files, Encryption dan Security, Middleware Custom, Third-Party Integration, Data Transformation, dan Testing.
+        - Pemisah tanggung jawab antara logika utama dengan logika pendukung aplikasi.
+        - Penerapan DRY (Don't Repeat Yourself).
+        
+    * ViewModels (MVVM) / Controller (MCV) :
+        - Mempresentasikan model data dari folder Models untuk disajikan ke client.
+        - Menentukan struktur data yang akan dikirimkan ke client dan akan ditampilkan di View.
+        - Melakukan filter untuk data sensitif, jika di folder Models data akan direpresentasikan semuanya maka di folder ViewModels ini akan melindungi data sensitif yang harus disembunyikan dari client.
+        - Transformasi data sesuai kebutuhan client.
+        - Validasi input dari sisi client, artinya ViewModels akan melakukan filter dari data yang dikirim oleh client ke aplikasi kita untuk memastikan data yang dikirim oleh client adalah data yang dibutuhkan di aplikasi kita dan mencegah penyalahgunaan data.
+        - ViewModel bertanggung jawab untuk bagaimana sebuah data itu ditampilkan ke client.
+        
+    * Views :
+        - Bertanggung jawab penuh atas apa yang akan ditampilkan ke client baik secara data ataupun tampilan.
+
