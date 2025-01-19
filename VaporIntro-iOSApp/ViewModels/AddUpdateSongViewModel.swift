@@ -9,6 +9,9 @@ import SwiftUI
 
 final class AddUpdateSongViewModel: ObservableObject {
     @Published var songTitle: String = ""
+    @Published var songArtist: String = ""
+    @Published var songAlbum: String = ""
+    @Published var songGenre: String = ""
     
     var songID: UUID?
     
@@ -34,6 +37,6 @@ final class AddUpdateSongViewModel: ObservableObject {
             throw HttpError.badUrl
         }
         
-        let song = Song(id: nil, title: songTitle)
+        let song = Song(id: nil, title: songTitle, artist: songArtist, album: songAlbum, genre: songGenre)
     }
 }

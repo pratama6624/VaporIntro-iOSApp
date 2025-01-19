@@ -20,7 +20,7 @@ struct SongList: View {
                     Button {
                         print("selected")
                     } label : {
-                        Text(song.title)
+                        Text("\(song.title), \(song.artist), \(song.album), \(song.genre)")
                             .font(.title3)
                             .foregroundStyle(Color(.label))
                     }

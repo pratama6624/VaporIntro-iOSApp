@@ -10,4 +10,7 @@ import Foundation
 struct Song: Identifiable, Codable {
     let id: UUID?
     var title: String
+    var artist: String
+    var album: String
+    var genre: String
 }
